@@ -19,7 +19,6 @@ def load_data():
     data =  data.drop(columns='song_id')
     return data
 
-model = train_model(load_data())
 
 # take song URL
 with st.expander('Enter Song URL', True):
@@ -45,5 +44,5 @@ if song_input and ready_button:
     with col3:
         st.text(song_title)
     
-    mood = predict_single_song_mood(song_artist, song_title, model)
+    mood = predict_single_song_mood(song_artist, song_title, train_model(load_data()))
     st.text('The song\'s mood is: '+ mood)
