@@ -11,7 +11,7 @@ st.set_page_config(
 
 add_logo()
 
-data_file = 'pages\song_lyrics.csv'
+data_file = 'pages/song_lyrics.csv'
 
 @st.cache
 def load_data():
