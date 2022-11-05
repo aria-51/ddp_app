@@ -1,16 +1,17 @@
 import streamlit as st
-import pandas as pd 
-import numpy as np
+from helper_funct import add_logo
+from PIL import Image
+import pandas as pd
 
-# add title
-st.title('the coolest DDP project ever')
+st.set_page_config(
+                    page_title='DDP Demo',
+                    page_icon=Image.open('cats.jpg'),
+                    layout='wide'
+                    )
 
-with st.sidebar:
-    st.markdown("## the")
-    st.title('the coolest ddp project')
+add_logo()
 
-
-data_file = 'song_lyrics.csv'
+data_file = 'pages\song_lyrics.csv'
 
 @st.cache
 def load_data():
