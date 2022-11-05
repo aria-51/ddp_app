@@ -10,3 +10,8 @@ st.set_page_config(
                     )
 
 add_logo()
+
+user_input = st.text_input('Enter your vibe here:','beach party')
+
+if st.button('Generate my playlist!'):
+    st.audio('https://p.scdn.co/mp3-preview/135c5c2caba0db75f946dec7e93fdb752fe8d399?cid=db90a7924baf4b38a9cbb37964f71044')
