@@ -2,6 +2,8 @@ import streamlit as st
 import glob, random
 from lyrics_function import get_lyrics
 from PIL import Image
+import spotipy
+import spotipy.util as util
 
 def setup_page():
     st.set_page_config(
@@ -84,6 +86,20 @@ def connect_to_spotify():
     import spotipy
     from spotipy.oauth2 import SpotifyClientCredentials
 
-    auth_manager = SpotifyClientCredentials(client_id='db90a7924baf4b38a9cbb37964f71044', client_secret = '27599d5076e74b29b99d0f3e0f1caa92')
+    auth_manager = SpotifyClientCredentials(client_id='86f1cd94b44f45788a5f11660f8d3c25', client_secret = '912dad4bcc4b4b69be870ff612520e9b')
     sp = spotipy.Spotify(auth_manager=auth_manager)
+    return sp
+
+def extra_auth():
+
+
+    client_id = '86f1cd94b44f45788a5f11660f8d3c25'
+    client_secret = '912dad4bcc4b4b69be870ff612520e9b'
+    redirect_uri = 'http://localhost:8501/test/' # update this
+    username = 'rayna747'
+    scope = 'playlist-modify-public'
+
+    token = util.prompt_for_user_token(username, scope, client_id=client_id, client_secret=client_secret,redirect_uri=redirect_uri) 
+    sp = spotipy.Spotify(auth=token)
+    
     return sp
