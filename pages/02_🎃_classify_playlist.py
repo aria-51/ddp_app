@@ -1,6 +1,8 @@
 import streamlit as st
 from helper_funct import add_logo, setup_page, train_model, predict_single_song_mood, connect_to_spotify
 import pandas as pd
+import streamlit.components.v1 as components
+import re
 
 setup_page()
 add_logo()
@@ -23,7 +25,7 @@ if playlist_input and ready_button:
     with col1:
         st.image(song_image)
         st.subheader(song_title)
-        st.write(song_artist)
+        #st.write(song_artist)
 
     # get song titles 
     tracks_total = len(playlist_details['tracks']['items'])
@@ -38,8 +40,13 @@ if playlist_input and ready_button:
     df['artist']=artists
 
     with col2:
-        st.write(df)
+        #st.write(df)
+        match_re = 'playlist[\/:](.+)[\s?]'
+        playlist_uri = re.findall(match_re, playlist_input)[0]
+        
+        uri_link = 'https://open.spotify.com/embed/playlist/' + playlist_uri
+        components.iframe(uri_link, height= 400)
     
     # for each song in df calc mood, keep track, do some count, show
     #mood = predict_single_song_mood(song_artist, song_title, train_model(load_data()))
-    st.text('The song\'s mood is: '+ 'SPOOKY')
+    st.text('The playlist\'s mood is: '+ 'SPOOKY')

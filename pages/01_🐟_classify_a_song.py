@@ -30,6 +30,8 @@ if song_input and ready_button:
     song_title = song_details['name']
     song_artist = song_details['artists'][0]['name']
     song_image = song_details['album']['images'][1]['url']
+    
+    #st.audio('https://p.scdn.co/mp3-preview/135c5c2caba0db75f946dec7e93fdb752fe8d399?cid=db90a7924baf4b38a9cbb37964f71044')
 
     col1, col2, col3 = st.columns([60,50,50])
     with col1:
