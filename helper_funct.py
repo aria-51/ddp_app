@@ -92,8 +92,8 @@ def connect_to_spotify():
 def extra_auth():
 
     client_id = '86f1cd94b44f45788a5f11660f8d3c25'
-    client_secret = '912dad4bcc4b4b69be870ff612520e9b'
-    redirect_uri = 'http://localhost:8501/test/' # update this
+    client_secret = 'def8194bba264a5a871170bac6fca086'
+    redirect_uri = 'http://localhost:8888/callback/' # update this
     username = 'rayna747'
     scope = 'playlist-modify-public'
 
