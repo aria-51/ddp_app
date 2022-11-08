@@ -4,6 +4,7 @@ from lyrics_function import get_lyrics
 from PIL import Image
 import spotipy
 import spotipy.util as util
+from spotipy.oauth2 import SpotifyClientCredentials
 
 def setup_page():
     st.set_page_config(
@@ -83,15 +84,12 @@ def predict_single_song_mood(title, artist, model):
 
 def connect_to_spotify():
     # connect to spotify
-    import spotipy
-    from spotipy.oauth2 import SpotifyClientCredentials
 
     auth_manager = SpotifyClientCredentials(client_id='86f1cd94b44f45788a5f11660f8d3c25', client_secret = '912dad4bcc4b4b69be870ff612520e9b')
     sp = spotipy.Spotify(auth_manager=auth_manager)
     return sp
 
 def extra_auth():
-
 
     client_id = '86f1cd94b44f45788a5f11660f8d3c25'
     client_secret = '912dad4bcc4b4b69be870ff612520e9b'
