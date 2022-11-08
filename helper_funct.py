@@ -1,5 +1,14 @@
 import streamlit as st
 import glob, random
+from lyrics_function import get_lyrics
+from PIL import Image
+
+def setup_page():
+    st.set_page_config(
+                    page_title='ddp demo | any questions?',
+                    page_icon=Image.open('any_questions.jpg'),
+                    layout='wide'
+                    )
 
 def add_logo():
     st.markdown(
@@ -42,12 +51,16 @@ def train_model(df):
 
     return trained_model
 
+def vectorize():
+    pass
+
 def predict_single_song_mood(title, artist, model):
     # get artist
 
     # get title
 
     # get lyrics
+    lyrics = get_lyrics(artist, title)
 
     # transform lyrics
     # beach party

@@ -1,13 +1,7 @@
 import streamlit as st
-from helper_funct import add_logo, get_random_artwork
-from PIL import Image
+from helper_funct import add_logo, get_random_artwork, setup_page
 
-st.set_page_config(
-                    page_title='DDP Demo',
-                    page_icon=Image.open('cats.jpg'),
-                    layout='wide'
-                    )
-
+setup_page()
 add_logo()
 
 st.image(get_random_artwork(10), width=100)
