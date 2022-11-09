@@ -1,5 +1,5 @@
 import streamlit as st
-from helper_funct import add_logo, setup_page, connect_to_spotify, train_model, predict_single_song_mood, connect_to_spotify, extra_auth
+from helper_funct import add_logo, setup_page, connect_to_spotify, predict_single_song_mood, connect_to_spotify, extra_auth
 import pandas as pd
 import re
 import streamlit.components.v1 as components
@@ -19,7 +19,7 @@ if ready_button:
 
     # get 10 songs from our playlist
     # get csv into df
-    df = pd.read_csv('pages/song_repo.csv')
+    #df = pd.read_csv('pages/song_repo.csv')
     #st.write(df[df.mood.eq(prediction)].sample(2))
 
     # fake seed songs

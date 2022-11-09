@@ -23,7 +23,7 @@ def get_lyrics(artist, song_title):
         lyrics = genius.search_song(song_title, artist).lyrics
     except:
         lyrics=''
-    #print(lyrics)
+
     lyrics = clean_lyrics(lyrics)
 
     return lyrics
