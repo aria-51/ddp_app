@@ -7,9 +7,6 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords, wordnet
 from nltk.stem import WordNetLemmatizer
 
-def rempunc(text):
-    return  " ".join(re.findall("[a-zA-Z]+", text))
-
 client_id = 'BMU2d7PVnIvEnVFKQiMlwJFcSffuHq2epuHYfqTstC7CiqLqSC42KMDTEVTPnRsY'
 client_secret ='6Sh1I8isQGva9bIDg8qDnCSEnHbfQy71SurcywPLj2s8R9S1W8MdpprpYdqSPR2AO8c79njZlhSl9RHnxB_5vw'
 token = 'sL8fGLHNCUnND1eoeMd6t3-gLWvSet8sU-zoBfauaIPuOXlbKuZrdX2hJiXGFWjD'
